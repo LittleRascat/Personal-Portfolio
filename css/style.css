@@ -1,5 +1,5 @@
 html {
-  scroll-padding: 65px;
+  scroll-padding: 5vw;
 }
 
 header {
@@ -8,23 +8,32 @@ header {
   align-items: center;
   position: fixed;
   width: 100%;
-  height: 60px;
-  font-size: 36px;
-  color: blanchedalmond;
+  height: auto;
+  font-size: 3vw;
   background-color: rgb(160, 60, 60);
 }
 
-header a {
+#header-name {
+  margin: 10px 25px;
+  font-weight: bold;
+  color: black;
+}
+
+.nav-link {
+  margin: 10px 25px;
   text-decoration: none;
   color: blanchedalmond;
 }
 
-#header-name {
-  margin: auto 25px;
+.nav-link:hover {
+  animation-name: hover;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
 
-.nav-link {
-  margin: auto 25px;
+@keyframes hover {
+  0% {text-decoration: underline;}
+  100% {text-decoration: underline;}
 }
 
 #welcome-section {
@@ -44,7 +53,7 @@ h1 {
 }
 
 #main-name {
-  font-size: 150px;
+  font-size: 15vw;
 }
 
 #projects {
@@ -56,8 +65,8 @@ h1 {
 #project-tiles {
   display: grid;
   justify-content: center;
-  grid-template-columns: 525px 525px;
-  grid-template-rows: 350px 350px 350px;
+  grid-template-columns: repeat(2, 35vw);
+  grid-template-rows: repeat(3, 22vw);
   column-gap: 30px;
   row-gap: 30px;
   margin-top: 15px;
@@ -66,14 +75,14 @@ h1 {
 .project-tile {
   display: block;
   text-align: center;
-  padding-top: 25px;
+  padding-top: 0.25em;
   background-color: rgb(235, 176, 121);
-  font-size: 30px;
+  font-size: 2.5vw;
 }
 
 .project-image {
-  width: 480px;
-  height: 275px;
+  width: 95%;
+  height: 85%;
 }
 
 #contact-section {
@@ -99,4 +108,29 @@ h1 {
 #github-logo {
   height: 30px;
   width: auto;
+}
+
+
+@media (max-width: 740px) {
+  header {
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 4.25vw;
+    padding-bottom: 10px;
+  }
+  html {scroll-padding: 10vw;}
+  #main-name {font-size: 20vw;}
+  #project-tiles {
+    grid-template-columns: 80vw;
+    grid-template-rows: repeat(6, 55vw);
+  }
+  .project-tile {
+    padding-top: 0.5em;
+    font-size: 3vw;
+  }
+  .project-image {
+    width: 95%;
+    height: 90%;
+  }
+  #contact-section {height: 30vh;}
 }
